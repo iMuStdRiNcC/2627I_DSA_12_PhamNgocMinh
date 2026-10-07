@@ -1,0 +1,133 @@
+//BAI W4
+import edu.princeton.cs.algs4.*;
+import java.util.Random;
+
+public class Bai1 
+{
+
+    public static void sort(int[] a) 
+    {
+        for (int i = 1; i < a.length; i++) {
+            int current = a[i];
+            int j = i - 1;
+
+            while (j >= 0 && a[j] > current) {
+                a[j + 1] = a[j];
+                j--;
+            }
+
+            a[j + 1] = current;
+        }
+    }
+
+    public static void main(String[] args) 
+    {
+
+        int n = 4000;
+
+        // Example: random data
+        int[] a = new int[n];
+
+        Random random = new Random();
+
+        for (int i = 0; i < n; i++) {
+            a[i] = random.nextInt(100000);
+        }
+        /*  cho đã sắp xếp
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+          a[i] = i;
+        }*/
+        /*  cho sắp xếp ngược
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+          a[i] = n - i;
+        }
+        }*/
+        /* cho giá trị bằng nhau
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            a[i] = 5;
+        }*/
+
+
+        long start = System.currentTimeMillis();
+
+        sort(a);
+
+        long end = System.currentTimeMillis();
+
+        StdOut.println("n = " + n);
+        StdOut.println("Time = " + (end - start) + " ms");
+    }
+}
+
+//BAI2 W4
+import edu.princeton.cs.algs4.*;
+import java.util.Random;
+
+public class Bai2 
+{
+
+    public static void sort(int[] a) {
+    for (int i = 0; i < a.length - 1; i++) {
+
+        int min = i;
+
+        for (int j = i + 1; j < a.length; j++) {
+            if (a[j] < a[min]) {
+                min = j;
+            }
+        }
+
+        int temp = a[i];
+        a[i] = a[min];
+        a[min] = temp;
+    }
+}
+
+    public static void main(String[] args) 
+    {
+
+        int n = 4000;
+
+        // Example: random data
+        int[] a = new int[n];
+
+        Random random = new Random();
+
+        for (int i = 0; i < n; i++) {
+            a[i] = random.nextInt(100000);
+        }
+        /*  cho đã sắp xếp
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+          a[i] = i;
+        }*/
+        /*  cho sắp xếp ngược
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+          a[i] = n - i;
+        }
+        }*/
+        /* cho giá trị bằng nhau
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            a[i] = 5;
+        }*/
+        long start = System.currentTimeMillis();
+
+        sort(a);
+
+        long end = System.currentTimeMillis();
+
+        StdOut.println("n = " + n);
+        StdOut.println("Time = " + (end - start) + " ms");
+    }
+}
